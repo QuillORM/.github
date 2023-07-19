@@ -26,4 +26,4 @@ However, in the current phase of development, where a concept is developed, we t
 to keep the basic view of QuillORM in sight and make development as fast as possible.
 
 ## Concept
-You can view the current concept at [Concept.md](https://github.com/CheeseTastisch/QuillORM/blob/main/concept/Concept.md).
+A concept will be created. If the creation of the concept is started it will be noted here.
