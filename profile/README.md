@@ -20,7 +20,7 @@ This is the base for the model generation, which will only rely on the ORM to do
 migrations.
 
 ## How to contribute?
-If you want to contribute to QuillORM, you can do so by creating a pull request.
+If you want to contribute to QuillORM, you can do so by creating a pull request, opening an issue, starting a discussion or participating in existing ones.
 
 However, in the current phase of development, where a concept is developed, we try to keep the team as small as possible,
 to keep the basic view of QuillORM in sight and make development as fast as possible.
