@@ -44,7 +44,8 @@ The key concept of QuillORM is that the developer is only required to write evol
 **But what are evolutions?**
 
 Think of your database as a living creature, let's call it "Bob".
-At the start of his life, Bob is a baby, he has no structure (no tables) and is basically empty (your database is blank).
+At the start of his life, Bob is a baby, 
+he has no structure (no tables) and is basically empty (your database is blank).
 
 But as time evolves, Bob grows up and gets more and more structure (tables),
 in his first view years he learns most things,
