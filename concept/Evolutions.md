@@ -260,4 +260,5 @@ ignoring if they are defined in the evolutions or not.
 Evolution.wipe()
 ```
 
-[Back: Configure and connect](ConfigureAndConnect.md#33-disconnect)
+[Back: Configure and connect](ConfigureAndConnect.md#33-disconnect) |
+[Next: ORM](ORM.md#5-orm)
