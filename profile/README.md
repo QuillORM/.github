@@ -26,4 +26,5 @@ However, in the current phase of development, where a concept is developed, we t
 to keep the basic view of QuillORM in sight and make development as fast as possible.
 
 ## Concept
-A concept will be created. If the creation of the concept is started it will be noted here.
+The current state of the concept can be viewed at the 
+[Concept.md in .github](https://github.com/QuillORM/.github/blob/main/concept/Concept.md).
