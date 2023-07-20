@@ -170,4 +170,4 @@ QuillORM.disconnect()
 
 This will close all active connections to the database and close a `DataSource` if one was used.
 
-[Back: JDBC Shell](JDBCShell.md#2-jdbc-shell)
+[Back: JDBC Shell](JDBCShell.md#24-building-sql-statements) | [Next: Evolutions](Evolutions.md#4-evolutions)

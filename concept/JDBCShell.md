@@ -84,5 +84,5 @@ val statement = buildSql {
 The exact definitions of the JDBC Shell may be changed during development.
 So this is just a brief overview of the JDBC Shell.
 
-[Back: Introduction](Intoduction.md#1-introduction) |
+[Back: Introduction](Intoduction.md#13-the-key-concept-evolutions-only) |
 [Next: Configure and connect](ConfigureAndConnect.md#3-configure-and-connect)
