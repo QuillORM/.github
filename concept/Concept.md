@@ -1,5 +1,4 @@
-# Concept
-## Preamble
+# Preamble
 The concept of QuillORM is still in an early phase of development. Therefore, the concept is currently only a
 concept proposal. The concept is neither complete nor final or even implemented.
 
@@ -15,14 +14,14 @@ The concept is split into multiple files, that are located in the `concept` fold
 The purpose of these split is to keep a better overview of the concept.
 In general each topic has its own file.
 
-## Table of Contents
+# Table of Contents
 1. [Introduction](#1-introduction)
    1. [What is the goal of QuillORM?](#11-what-is-the-goal-of-quillorm)
    2. [Why another ORM?](#12-why-another-orm)
    3. [The key concept: Evolutions only](#13-the-key-concept-evolutions-only)
 2. [Connect and configure](ConnectAndConfigure.md)
 
-## 1. Introduction
+# 1. Introduction
 ### 1.1. What is the goal of QuillORM?
 QuillORM amis to be a "feather-light quill for Kotlin object relational mapping", but what does that mean?
 
@@ -37,7 +36,7 @@ The "Kotlin" part is clear, QuillORM is written and designed for Kotlin.
 The "object relational mapping" part is the most important part of QuillORM. QuillORM maps the date from your database
 to data a developer can easily work with. This is done by **generating models** based on the database structure.
 
-### 1.2. Why another ORM?
+## 1.2. Why another ORM?
 You may already know many Kotlin ORM frameworks: "Exposed", "Ktorm" and "Hybernate" only to name a few.
 
 **So why another ORM?**
@@ -61,7 +60,7 @@ which is the case for many ORMs.
 
 That are, among some others, the most important downsides of existing ORMs, that QuillORM tries to solve.
 
-### 1.3. The key concept: Evolutions only
+## 1.3. The key concept: Evolutions only
 The key concept of QuillORM is that the developer is only required to write evolutions.
 
 **But what are evolutions?**
