@@ -211,5 +211,23 @@ In the model a property with the type of `List<ReferencedModel>` will be created
 If a many-to-many relation is defined by two tables, that both reverence each other, a
 `CircularReferenceException` will be thrown.
 
+To add data to the intermediate table, a block can be passed to the `manyToMany` function, that will add the columns
+to the intermediate table.
+
+To modify the intermediate table in a patch, the `modifyIntermediate` function can be used, that takes a block, 
+that can modify the intermediate table.
+
+```kotlin
+object UserSessionTable : Table("user_sessions", 1) {
+    val id = column("id", IntColumnDesciption).primaryKey().autoIncrement().version(1)
+    val userId = manyToMany(UserTable) { table -> table.column("created_at", TimestampColumnDescription) }.version(1)
+        .patch(2) { table ->
+            modifyIntermediate { table ->
+                table.column("updated_at", TimestampColumnDescription)
+            }
+        }
+}
+```
+
 [Back: Configure and connect](ConfigureAndConnect.md#33-disconnect) |
 [Next: ORM](ORM.md#5-orm)
