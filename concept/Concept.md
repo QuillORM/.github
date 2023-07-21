@@ -54,6 +54,9 @@ In general each topic has its own file.
       1. [The relation interface](ORM.md#521-the-relation-interface)
       2. [Many-to-many relations](ORM.md#522-many-to-many-relations)
 6. [Model generation](ModelGeneration.md#6-model-generation)
+   1. [The model generator](ModelGeneration.md#61-the-model-generator)
+   2. [How to generate models](ModelGeneration.md#62-how-to-generate-models)
+   3. [Model generator conclusion](ModelGeneration.md#63-model-generator-conclusion)
 7. [Modules](Modules.md#7-modules)
 8. [Conclusion](Conclusion.md#8-conclusion)
 
