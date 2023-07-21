@@ -40,6 +40,40 @@ object UserTable : Table("users", 1) {
 }
 ```
 
+There are some special table classes, that add some additional functionality to your table.
+
+#### 4.2.1. IdTable
+An IdTable is a table, that has an `id` column, that has to be overridden by the user.
+
+The type of the id must be specified as a generic type argument.
+
+```kotlin
+object UserTable : IdTable<Int>("users", 1) {
+    override val id = column("id", IntColumnDesciption).primaryKey().autoIncrement()
+}
+```
+
+### 4.2.2. IntIdTable
+An IntIdTable is a [IdTable](#421-idtable), that has an `unsigned big int` as an id.
+
+```kotlin
+object UserTable : IntIdTable("users", 1) {
+    // ...
+}
+```
+
+### 4.2.3. UUIDIdTable
+An UUIDIdTable is a [IdTable](#421-idtable), that has an `uuid` as an id.
+
+The generation of the uuid can be more specified in the [Configuration](ConfigureAndConnect.md#31-configuration).
+More on that in the final documentation. 
+
+```kotlin
+object UserTable : UUIDIdTable("users", 1) {
+    // ...
+}
+```
+
 ## 4.3. The table structure
 To define the structure of your table, you simply need to add a property to your table object,
 that uses the `column` function to define the column.
@@ -121,6 +155,61 @@ object UserTable : Table("users", 1) {
     
 }
 ```
+
+## 4.6. Relations
+There are three relations, you can define in QuillORM, `oneToOne`, `oneToMany` and `manyToMany`.
+
+All of these can just be defined by creating a column with an `refernce` on it, like this:
+
+```kotlin
+object UserSessionTable : Table("user_sessions", 1) {
+    val id = column("id", IntColumnDesciption).primaryKey().autoIncrement().version(1)
+    val userId = column("user_id", IntColumnDesciption).reference(UserTable.id).version(1)
+}
+```
+
+However, this will only add a property with a type of `Int` to the model and will not load the referenced model.
+
+### 4.6.1. oneToOne and oneToMany
+To create a real reference, you should use the `belongsToOne` or `belongToMany` functions to create the reference.
+In the model, this will create a property with the type of the referenced model and in addition to that property,
+a function with the same name, that can be used to add, remove and filter the referenced model.
+
+The table reference needs to be an `IdTable`.
+
+```kotlin
+object UserSessionTable : Table("user_sessions", 1) {
+    val id = column("id", IntColumnDesciption).primaryKey().autoIncrement().version(1)
+    val userId = belongsToMany(UserTable).version(1)
+}
+```
+
+Both functions will create a column with a generated name (usually the name of the referenced table with an `_id` suffix,
+e.g. `user_id` for `UserTable`) and the type of the id of the referenced table.
+
+In the model a one-to-one relation will create a property with the type of the referenced model and a one-to-many
+relation will create a property with the type of `List<ReferencedModel>`.
+
+In the referenced model a reverse reference will be created, that can be used to get the model, that references the
+current model.
+
+### 4.6.2. manyToMany
+To create a many-to-many relation, you can use the `manyToMany` function, that takes the referenced table as an argument.
+
+```kotlin
+object UserSessionTable : Table("user_sessions", 1) {
+    val id = column("id", IntColumnDesciption).primaryKey().autoIncrement().version(1)
+    val userId = manyToMany(UserTable).version(1)
+}
+```
+
+This will create a seperated table with the name of the two referenced tables, sorted alphabetically, with an `_` in between,
+e.g. `user_sessions` for `UserTable` and `SessionTable`.
+
+In the model a property with the type of `List<ReferencedModel>` will be created in both models.
+
+If a many-to-many relation is defined by two tables, that both reverence each other, a
+`CircularReferenceException` will be thrown.
 
 [Back: Configure and connect](ConfigureAndConnect.md#33-disconnect) |
 [Next: ORM](ORM.md#5-orm)
