@@ -1,3 +1,4 @@
 # 5. ORM
 
-[Back: Evolutions](Evolutions.md#4-evolutions) | [Next: Model generation](ModelGeneration.md#6-model-generation)
+[Back: Table structure](TableStructure.md#4-table-structure) | 
+[Next: Model generation](ModelGeneration.md#6-model-generation)

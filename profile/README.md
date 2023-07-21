@@ -4,24 +4,24 @@ The Feather-Light Quill for Kotlin Relational Mapping 🪶
 ## What is QuillORM?
 QuillORM is a lightweight object relation mapping library for Kotlin.
 
-With its **evolution only** approach, you as a developer can focus on the database structure,
+With its **structure only** approach, you as a developer can focus on the database structure,
 the generation of models is done by QuillORM.
 
 ## How to use QuillORM?
 QuillORM is currently in an early stage of development.
 
 The following phases are planned:
-1. 👉 Concept: In this phase, a concept for QuillORMs **evolution only** approach is developed.
+1. 👉 Concept: In this phase, a concept for QuillORMs **structure only** approach is developed.
 2. JDBC Shell: In this phase a JDBC shell is developed, that includes amongst others
    - the building of queries
    - the execution of queries and
    - the wrapping of the result.
-3. Evolutions: In this phase the evolution engine is developed, 
-to actually convert the created evolutions to a database structure.
+3. Table structure: In this phase the table structure engine is developed, 
+to actually convert the versioned table structure to a database structure.
 4. ORM: In this phase the actual ORM and therefore mapping between the database and the models is developed.
 This is the base for the model generation, which will only rely on the ORM to do the heavy lifting.
 5. Model generation: In this phase the model generation is developed, which will generate the models based on the
-evolutions.
+table structure.
 
 ## How to contribute?
 If you want to contribute to QuillORM, you can do so by creating a pull request, opening an issue, starting a discussion or participating in existing ones.
