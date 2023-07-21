@@ -58,6 +58,9 @@ In general each topic has its own file.
    2. [How to generate models](ModelGeneration.md#62-how-to-generate-models)
    3. [Model generator conclusion](ModelGeneration.md#63-model-generator-conclusion)
 7. [Modules](Modules.md#7-modules)
+   1. [Extending the table structure](Modules.md#71-extending-the-table-structure)
+   2. [Extending models](Modules.md#72-extending-models)
+   3. [Extending the model generator](Modules.md#73-extending-the-model-generator)
 8. [Conclusion](Conclusion.md#8-conclusion)
 
 [Next: Introduction](Intoduction.md#1-introduction)
