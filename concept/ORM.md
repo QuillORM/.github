@@ -251,5 +251,5 @@ interface User : Model {
 }
 ```
 
-[Back: Table structure](TableStructure.md#4-table-structure) | 
+[Back: Table structure](TableStructure.md#462-manytomany) | 
 [Next: Model generation](ModelGeneration.md#6-model-generation)
