@@ -1,6 +1,6 @@
 
 # 1. Introduction
-### 1.1. What is the goal of QuillORM?
+## 1.1. What is the goal of QuillORM?
 QuillORM amis to be a "feather-light quill for Kotlin object relational mapping", but what does that mean?
 
 The "feather-light" parts reassembles the aim of QuillORM to be a lightweight framework,
