@@ -15,7 +15,7 @@ It is a gradle task, that the developer should execute after every change to the
 That gradle task will look for table structures in the project and generate the models, sql builders and
 their implementations in a package, that the developer can specify.
 
-We suggest some package like `at.tld.generated.models`, to make it clear, that the models are generated.
+We suggest some package like `at.domain.generated.models`, to make it clear, that the models are generated.
 
 ## 6.2. How to generate models
 The model generate will generate the all structures only based on the table structure and

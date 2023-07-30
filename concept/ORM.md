@@ -51,7 +51,7 @@ The model sql builder interface is an interface, that must always implement the 
 In addition to that, it must have functions to build a sql query to select the model from the database.
 
 ```kotlin
-interface Use : Model {
+interface User : Model {
     // ...
 
     interface SqlBuilder : ModelSqlBuilder<User> {
@@ -78,7 +78,12 @@ interface Use : Model {
 }
 ```
 
-The `ModelSqlBuilder<T>` provides some generic functions, that can use the properties of table object to perform the query.
+The `ModelSqlBuilder<T>` provides some generic functions, that can be used to perform some statements,
+like `where(field, operator, value)` or `sortBy(field, direction)`, 
+where `field` is always a property from the table object.
+
+In addition, it provides functions to chain and group the where clauses,
+like `orWhere(field, operator, value)` or `whereGroup { where(field, operator, value) }`.
 
 Also, the `ModelSqlBuilder<T>` provides some finishing functions, that finish the query and return the result, like
 - `first` to get the first result that matches the query,
@@ -96,7 +101,7 @@ The companion object must in addition to that also implement the `ModelSqlBuilde
 that the developer can use to start the building of a sql query.
 
 ```kotlin
-interface Use : Model {
+interface User : Model {
     // ...
 
     companion object : ModelCompanion<User, SqlBuilder>, SqlBuilder {
@@ -121,6 +126,16 @@ interface Use : Model {
 
 The `ModelCompanion<T, Builder>` interface provides some generic functions, 
 that can be used to crated a `SqlBuilder` and start the building of a sql query.
+
+In addition, the `ModelCompanion<T, Builder>` provides a `where` method, that takes a block,
+which can be used to build complex where conditions, like
+```kotlin
+User.where { // this: ComplexSqlBuilder
+    UserTable.id eq 1 and 
+            (UserTable.username eq "test" or UserTable.username eq "test2") and
+            cast(UserTable.firstName, CastType.CHAR) eq "test"
+}
+```
 
 ## 5.1.4. The model implementation
 The model implementation is a class, that must always implement the interface of the model and

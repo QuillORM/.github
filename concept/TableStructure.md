@@ -171,7 +171,7 @@ object UserSessionTable : Table("user_sessions", 1) {
 However, this will only add a property with a type of `Int` to the model and will not load the referenced model.
 
 ### 4.6.1. oneToOne and oneToMany
-To create a real reference, you should use the `belongsToOne` or `belongToMany` functions to create the reference.
+To create a real reference, you should use the `belongsToOne` or `manyToOne` functions to create the reference.
 In the model, this will create a property with the type of the referenced model and in addition to that property,
 a function with the same name, that can be used to add, remove and filter the referenced model.
 
@@ -180,7 +180,7 @@ The table reference needs to be an `IdTable`.
 ```kotlin
 object UserSessionTable : Table("user_sessions", 1) {
     val id = column("id", IntColumnDesciption).primaryKey().autoIncrement().version(1)
-    val userId = belongsToMany(UserTable).version(1)
+    val userId = manyToOne(UserTable).version(1)
 }
 ```
 

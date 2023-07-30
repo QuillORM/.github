@@ -66,15 +66,16 @@ The `SQLStatement` is the representation of prepared SQL statements.
 
 ```kotlin
 shell.exeucte(
-    SQLStatement("SELECT * FROM users WHERE id = ?")
-        .set(1, 1)
+    SQLStatement("SELECT * FROM users WHERE id = ?") { // it: SQLStatement
+        it[1] = 1
+    }
 )
 ```
 
 The `SQLStatementBuilder` is used to build SQL statements.
 
 ```kotlin
-val statement = buildSql {
+val statement = buildSql { // this: SQLStatementBuilder
     append("SELECT users.name")
     append("FROM users")
     append("WHERE users.id = ?", 1)
