@@ -15,7 +15,7 @@ Just write your table structure once and QuillORM will generate the models for y
 The structure of your database is not static, as development progresses,
 the structure will change. For this reason, QuillORM provides a way to version your database structure.
 
-So each field of your table is assigned a version, that describes in which version if first appeared,
+So each column of your table is assigned a version, that describes in which version if first appeared,
 afterward you can patch that definition in later versions to modify your structure.
 
 In addition to that, each table has a target version, that describes, in which version the table should be.
