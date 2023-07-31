@@ -4,20 +4,24 @@ The Feather-Light Quill for Kotlin Relational Mapping 🪶
 ## What is QuillORM?
 QuillORM is a lightweight object relation mapping library for Kotlin.
 
-With its **migrations only** approach, you as a developer can focus on the database structure,
+With its **structure only** approach, you as a developer can focus on the database structure,
 the generation of models is done by QuillORM.
 
 ## How to use QuillORM?
 QuillORM is currently in an early stage of development.
 
 The following phases are planned:
-1. 👉 Concept: In this phase, a concept for QuillORMs **migrations only** approach is developed.
-2. Migrations: In this phase the migration engine is developed, 
-to actually convert the created migrations to a database structure.
-3. ORM: In this phase the actual ORM and therefore mapping between the database and the models is developed.
+1. 👉 Concept: In this phase, a concept for QuillORMs **structure only** approach is developed.
+2. JDBC Shell: In this phase a JDBC shell is developed, that includes amongst others
+   - the building of queries
+   - the execution of queries and
+   - the wrapping of the result.
+3. Table structure: In this phase the table structure engine is developed, 
+to actually convert the versioned table structure to a database structure.
+4. ORM: In this phase the actual ORM and therefore mapping between the database and the models is developed.
 This is the base for the model generation, which will only rely on the ORM to do the heavy lifting.
-4. Model generation: In this phase the model generation is developed, which will generate the models based on the
-migrations.
+5. Model generation: In this phase the model generation is developed, which will generate the models based on the
+table structure.
 
 ## How to contribute?
 If you want to contribute to QuillORM, you can do so by creating a pull request, opening an issue, starting a discussion or participating in existing ones.
@@ -26,4 +30,5 @@ However, in the current phase of development, where a concept is developed, we t
 to keep the basic view of QuillORM in sight and make development as fast as possible.
 
 ## Concept
-A concept will be created. If the creation of the concept is started it will be noted here.
+The current state of the concept can be viewed at the 
+[Concept.md in .github](https://github.com/QuillORM/.github/blob/main/concept/Concept.md).
